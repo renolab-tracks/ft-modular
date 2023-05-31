@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <script defer src="./main.js"></script>
+    <title>Modular JS</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="page-header">
+            <h1>People Adder</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-info">
+            <h2>Stats:</h2>
+            <div id="stats-module"></div>
+          </div>
+          <div id="people-module" class="mt-3">
+            <input type="text" placeholder="name" />
+            <button id="add-person">Add</button>
+            <ul id="people" class="list-unstyled mt-3"></ul>
+          </div>
+          <div id="footer"></div>
+        </div>
+      </div>
+    </div>
+    <script id="people-template" type="text/template">
+      {{#people}}
+          <li class="badge rounded-pill bg-secondary"><span>{{.}}</span><i class="del">X</i></li>
+      {{/people}}
+    </script>
+  </body>
+</html>
